@@ -1,28 +1,16 @@
-# FROM hexletbasics/base-image:latest
-# swift with ubuntu:20.04 as base
-FROM swift:focal
+FROM hexletbasics/base-image:latest
 
-# From base-image
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
-ENV DEBIAN_FRONTEND noninteractive
+ARG V=5.5
 
-ENV INVALIDATE_CACHE 1
+RUN wget -q https://swift.org/builds/swift-${V}-release/ubuntu2004/swift-${V}-RELEASE/swift-${V}-RELEASE-ubuntu20.04.tar.gz
+RUN tar xzf swift-${V}-RELEASE-ubuntu20.04.tar.gz
+RUN mv swift-${V}-RELEASE-ubuntu20.04 /usr/local/swift
+RUN rm swift-${V}-RELEASE-ubuntu20.04.tar.gz
 
-RUN apt-get update
-RUN apt-get install -yqq \
-  git curl python3-pip libyaml-dev zip unzip jq software-properties-common wget
-RUN pip3 install yamllint yq
-RUN curl -sL https://deb.nodesource.com/setup_17.x | bash - && apt-get install -y nodejs
-RUN npm install -g ajv-cli
-COPY ./common /opt/basics/common
-# End
+ENV PATH=/usr/local/swift/usr/bin:$PATH
 
 WORKDIR /exercises-swift
 
 COPY . .
 
 ENV PATH=/exercises-swift/bin:$PATH
-
-# Print Installed Swift Version
-RUN swift --version
