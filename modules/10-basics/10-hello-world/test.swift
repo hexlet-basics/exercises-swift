@@ -1,10 +1,14 @@
 import Foundation
 import HexletBasics
 
-// TODO: Вывод тестов непонятный
-let output = try Process().launch(with: "index.swift")
-print(output)
+let actual = try Process().launch(with: "index.swift")
+let expected = "Hello, World!"
+
+print(actual)
+
+// TODO: возможно стоит подключить либу, которая сразу даёт понятный вывод
+// чтобы не заниматся рукопашкой
 assert(
-  output == "Hello, World!",
-  "Failed to compare output, received \(output)"
+  actual == expected,
+  "\nExpected: \(expected)\nReceived: \(actual)"
 )
