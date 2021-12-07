@@ -34,7 +34,7 @@ public extension Process {
     @discardableResult func launch(
         with filename: String
     ) throws -> String {
-        executableURL = URL(fileURLWithPath: "/usr/bin/swift")
+        executableURL = URL(fileURLWithPath: "/usr/local/swift/usr/bin/swift")
         self.arguments = [filename]
 
         // Because FileHandle's readabilityHandler might be called from a

@@ -1,14 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
 # Provide library
-RELATIVE_PATH_TO_SRC=../../../src
+PATH_TO_SRC=/exercises-swift/src
 (
-  cd $RELATIVE_PATH_TO_SRC
+  cd $PATH_TO_SRC
   swift build -c release
 )
 
 # Compile test code and run
-swiftc -o Run test.swift -I $RELATIVE_PATH_TO_SRC/.build/release -L $RELATIVE_PATH_TO_SRC/.build/release -lHexletBasics
+swiftc -o Run test.swift -I $PATH_TO_SRC/.build/release -L $PATH_TO_SRC/.build/release -lHexletBasics
 chmod u+x ./Run
 ./Run 2>&1
 rm Run
