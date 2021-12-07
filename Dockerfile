@@ -1,9 +1,11 @@
 FROM hexletbasics/base-image:latest
 
-RUN wget -q https://swift.org/builds/swift-5.5-release/ubuntu2004/swift-5.5-RELEASE/swift-5.5-RELEASE-ubuntu20.04.tar.gz
-RUN tar xzf swift-5.5-RELEASE-ubuntu20.04.tar.gz
-RUN mv swift-5.5-RELEASE-ubuntu20.04 /usr/local/swift
-RUN rm swift-5.5-RELEASE-ubuntu20.04.tar.gz
+ARG V=5.5
+
+RUN wget -q https://swift.org/builds/swift-${V}-release/ubuntu2004/swift-${V}-RELEASE/swift-${V}-RELEASE-ubuntu20.04.tar.gz
+RUN tar xzf swift-${V}-RELEASE-ubuntu20.04.tar.gz
+RUN mv swift-${V}-RELEASE-ubuntu20.04 /usr/local/swift
+RUN rm swift-${V}-RELEASE-ubuntu20.04.tar.gz
 
 ENV PATH=/usr/local/swift/usr/bin:$PATH
 
