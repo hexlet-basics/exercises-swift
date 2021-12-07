@@ -6,6 +6,6 @@ services:
   exercises:
     build: .
     volumes:
-      - .:/exercises-typescript
+      - .:/exercises-swift
     command: make check
 
