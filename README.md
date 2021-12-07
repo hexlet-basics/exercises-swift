@@ -1,10 +1,10 @@
-# hexlet-basics
+# exercises-swift
 
 [![Github Actions Status](../../workflows/Docker/badge.svg)](../../actions)
 
 ### Участие
 
-- Обсуждение в канале #hexlet-volunteers слака http://slack-ru.hexlet.io
+* Обсуждение в канале #hexlet-volunteers слака http://slack-ru.hexlet.io
 
 ## Develop
 
@@ -13,6 +13,8 @@
 $ make
 # run
 $ make compose
+# check
+$ make ci-check
 
 # run tests
 $ make compose-test
@@ -24,9 +26,9 @@ $ make compose-schema-validate
 ```
 
 ##
-
 [![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/assets/master/images/hexlet_logo128.png)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=exercises-swift)
 
 This repository is created and maintained by the team and the community of Hexlet, an educational project. [Read more about Hexlet (in Russian)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=exercises-swift).
-
 ##
+
+See most active contributers on [hexlet-friends](https://friends.hexlet.io/).
