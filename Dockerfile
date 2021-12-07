@@ -11,6 +11,9 @@ ENV PATH=/usr/local/swift/usr/bin:$PATH
 
 WORKDIR /exercises-swift
 
+COPY src src
+RUN cd src && swift build -c release
+
 COPY . .
 
 ENV PATH=/exercises-swift/bin:$PATH
