@@ -4,3 +4,6 @@ language:
   extension: swift
   exercise_filename: index.swift
   exercise_test_filename: test.swift
+  learn_as: first_language
+  progress: in_development
+  name: Swift
