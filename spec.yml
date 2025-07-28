@@ -1,6 +1,6 @@
 ---
 language:
-  docker_image: "hexletbasics/exercises-swift"
+  docker_image: "ghcr.io/hexlet-basics/exercises-swift"
   extension: swift
   exercise_filename: index.swift
   exercise_test_filename: test.swift
