@@ -8,7 +8,9 @@ clean() {
 }
 
 # Compile test code and run
-swiftc -o Run test.swift -I $BUILD_PATH -L $BUILD_PATH -lHexletBasics
+# Newer SwiftPM places the .swiftmodule under .build/release/Modules,
+# while libHexletBasics.a stays in .build/release.
+swiftc -o Run test.swift -I $BUILD_PATH -I $BUILD_PATH/Modules -L $BUILD_PATH -lHexletBasics
 ./Run
 
 exit_code=$?
